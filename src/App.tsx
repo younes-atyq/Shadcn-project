@@ -60,6 +60,7 @@ export default function App() {
   const [status, setStatus] = useState<ContactStatus>("Active");
   const [isUpdating, setIsUpdating] = useState<boolean>(false);
   const [contactId, setContactId] = useState<string>("");
+  const [isDeleting, setIsDeleting] = useState<boolean>(false);
 
   const emptyValues = () => {
     setName("");
@@ -69,6 +70,7 @@ export default function App() {
     setStatus("Active");
     setOpen(false);
     setIsUpdating(false);
+    setIsDeleting(false);
   };
   useEffect(() => {
     let ignore = false;
@@ -93,7 +95,7 @@ export default function App() {
     return () => {
       ignore = true;
     };
-  }, [open]);
+  }, [open, isDeleting]);
 
   const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -123,10 +125,11 @@ export default function App() {
   };
 
   const handleDelete = (id: string) => {
+    setIsDeleting(true);
     try {
       fetch(`${ApiUrl}/${id}`, {
         method: "DELETE",
-      }).finally(() => setOpen(false));
+      }).finally(() => emptyValues());
     } catch (error) {
       console.error(error);
     }
@@ -143,7 +146,7 @@ export default function App() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-between p-24">
+    <main className="flex flex-col items-center justify-between py-24 sm:px-24 lg:px-32">
       <h1 className="text-3xl">Contact Directory</h1>
       <div className="container flex flex-col items-center justify-center gap-4 px-4 py-8 w-full">
         <Dialog open={open} onOpenChange={setOpen}>
@@ -250,7 +253,7 @@ export default function App() {
         </Dialog>
         {
           <Table>
-            <TableCaption>A list of your recent invoices.</TableCaption>
+            <TableCaption>A list of your recent leads</TableCaption>
             <TableHeader>
               <TableRow>
                 <TableHead>Company</TableHead>
