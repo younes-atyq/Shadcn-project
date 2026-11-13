@@ -1,51 +1,50 @@
 {
-  "invoices": [
+  "contacts": [
     {
-      "invoiceNumber": "INV-2026-001",
-      "status": "pending",
-      "issueDate": "2026-11-01",
-      "dueDate": "2026-12-01",
-      "currency": "USD",
-      "issuer": {
-        "name": "Acme Digital Agency",
-        "email": "billing@acmedigital.example",
-        "address": "123 Business Rd, Suite 100"
-      },
-      "client": {
-        "name": "Global Tech Corp",
-        "contactPerson": "Jane Doe",
-        "email": "accounting@globaltech.example",
-        "address": "456 Enterprise Ave"
-      },
-      "items": [
-        {
-          "id": "item_01",
-          "description": "Full-Stack Web Application Development & Custom CMS",
-          "quantity": 1,
-          "unitPrice": 1800.0,
-          "total": 1800.0
-        },
-        {
-          "id": "item_02",
-          "description": "Tailwind CSS UI Refactoring & Responsive Optimization",
-          "quantity": 12,
-          "unitPrice": 50.0,
-          "total": 600.0
-        },
-        {
-          "id": "item_03",
-          "description": "Automated Document Generation Script Setup",
-          "quantity": 1,
-          "unitPrice": 350.0,
-          "total": 350.0
-        }
-      ],
-      "subtotal": 2750.0,
-      "taxRate": 0.0,
-      "taxTotal": 0.0,
-      "discount": 100.0,
-      "grandTotal": 2650.0,
-      "notes": "Payment is due within 30 days. Please direct wire transfers to the designated corporate account."
+      "name": "Marcus Vance updated twice",
+      "company": "Northstar Logistics",
+      "email": "m.vance@northstar.example",
+      "phone": "+1 (555) 234-8891",
+      "status": "Active",
+      "lastContacted": "2026-11-13",
+      "id": "c-01"
+    },
+    {
+      "id": "c-02",
+      "name": "Elena Rostova",
+      "company": "Kestrel Architecture",
+      "email": "elena@kestrelarch.example",
+      "phone": "+1 (555) 891-0432",
+      "status": "Lead",
+      "lastContacted": "2026-11-08"
+    },
+    {
+      "id": "c-03",
+      "name": "David Chen",
+      "company": "Apex Fabrication",
+      "email": "dchen@apexfab.example",
+      "phone": "+1 (555) 402-7719",
+      "status": "Active",
+      "lastContacted": "2026-11-04"
+    },
+    {
+      "id": "c-04",
+      "name": "Sarah Jenkins",
+      "company": "Harborview Supply",
+      "email": "s.jenkins@harborview.example",
+      "phone": "+1 (555) 619-3305",
+      "status": "Archived",
+      "lastContacted": "2026-10-19"
+    },
+    {
+      "name": "new",
+      "company": "newCompany",
+      "email": "company@gmail.com",
+      "phone": "+1234567890",
+      "status": "Active",
+      "lastContacted": "2026-11-13",
+      "id": "rIm20YsTkPA"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
